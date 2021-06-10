@@ -1,0 +1,45 @@
+.main{
+    padding: 0vw 5vw;
+    width: 100%;
+    padding-bottom: 10vh;
+    margin-top: 10vh;
+}
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.heading{
+    text-align: center;
+    color: #d8d8d8;
+    font-size: 1.5vw;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    line-height: 4vw;
+    margin-top: 1vw;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'avenir';
+}
+.cardSection{
+    margin-top: -15vh;
+}
+.cardContainer{
+    width: 100%;
+    display: flex;
+    margin-top: 5vh;
+    justify-content: space-between;
+}

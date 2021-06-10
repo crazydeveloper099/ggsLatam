@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+.main{
+  background-color:#121f1f;
+    padding:5vh 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3vh;
+    width: 90vw;
+}
+.heading{
+  color: #d8d8d8;
+    font-size: 1.5vw;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'avenir';   
+}
+.logo{
+  height: 15vh;
+  width: 28vh;
+  border-radius: 2pt;
+}
+.gameName{
+  font-family: 'avenir';
+  font-size: 1.2vw;
+  color: white;
+}
+.textBoxRanking{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.textBoxRankingFstTxt{
+  font-family: 'avenir';
+  font-size: 1.2vw;
+  text-align: center;
+  color: white;
+}
+.textBoxRankingSecTxt{
+  font-size: 1vw;
+  color: white;
+}
+@media (max-width: 600px) {
+  .main{
+    background-color:#121f1f;
+      display: block;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 3vh;
+      width: 90vw;
+      padding:0;
+  }
+  .heading{
+    color: #d8d8d8;
+      font-size: 3.5vw;
+      font-weight: 900;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      box-sizing: border-box;
+      text-align: left;
+      font-family: 'avenir';   
+  }
+  .logo{
+    height: 30vh;
+    width: 100%;
+    border-radius: 2pt;
+  }
+  .gameName{
+    font-family: 'avenir';
+    font-size: 3.5vw;
+    color: white;
+    text-align: center;
+    margin-top: 2vh;
+  }
+  .textBoxRanking{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4vw;
+  }
+  .textBoxRankingFstTxt{
+    font-family: 'avenir';
+    font-size: 3.2vw;
+    text-align: center;
+    color: white;
+  }
+  .textBoxRankingSecTxt{
+    font-size: 3vw;
+    color: white;
+  }
+}

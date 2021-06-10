@@ -1,0 +1,193 @@
+.container{
+    width: 50vw;
+    height: 100vh;    
+}
+
+.mainContent{
+    display:flex;
+    height: 100%;
+    width: 50vw;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginHeading{
+    font-size: 2.5vw;
+    font-weight: bolder;
+    color: black;
+    font-family: 'avenir';
+}
+.loginSubHeading{
+    font-size: 1vw;
+    color: gray;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.input{
+    margin-top: 5vh;
+    padding:0 5vw 0 2vw; 
+}
+.forgetPass{
+    text-align: end;
+    width: 100%;
+    color: cornflowerblue;
+    font-weight: 300;
+    font-size: 0.8vw;
+    padding-right: 2.5vw;
+}
+.button{
+    background-color: blue;
+    color: white;
+    padding: 1vw 6vw;
+    font-size: 1.1vw;
+    border-radius: 10px;
+    margin-top: 3vh;
+    font-weight: bold;
+    outline: none;
+    cursor:pointer;
+    border:none;
+    transition: box-shadow .6s;
+    box-shadow: 0px 0px 39px -2px rgba(188,0,255,0.75);
+    -webkit-box-shadow: 0px 0px 39px -2px rgba(188,0,255,0.75);
+    -moz-box-shadow: 0px 0px 39px -2px rgba(188,0,255,0.75);
+}
+.button:hover{
+    -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.oauthHeading{
+    color: black;
+    margin-top: 3vw;
+    font-size: 0.9vw;
+    font-weight: 400;
+}
+.sameLine{
+    display: inline-flex;
+    justify-content: space-evenly   ;
+    width: 50%;
+    margin-top: 1vw;
+}
+.oauthCircle{
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius:50%;
+    padding:16px;
+    transition: box-shadow .6s;
+    box-shadow: 0px 2px 42px -9px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 42px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 42px -9px rgba(0,0,0,0.75);
+}
+.oauthCircle:hover{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.inputError{
+    border-color: red !important;
+    color: red !important;
+}
+.ggsLogo{
+    height: 4vw;
+}
+.fadeOut{
+    opacity:0;
+    width:0;
+    height:0;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+.fadeIn{
+
+    opacity:1;
+    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+
+}
+.verifyAccount{
+    font-family: 'avenir';
+    color: black;
+    font-size: 1.2vw;
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .container{
+        width: 100vw;
+        height: 100vh;   
+    }
+
+    .mainContent{
+        display:flex;
+        height: 100%;
+        width: 100vw;
+        padding: 0 10%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .ggsLogo{
+        height: 10vh;
+    }
+    .input{
+        margin-top: 5vh;
+        padding:0 10vw 0 1vw; 
+    }
+    .forgetPass{
+        text-align: end;
+        width: 100%;
+        color: cornflowerblue;
+        font-weight: 300;
+        font-size: 3.5vw;
+        padding-right: 2.5vw;
+    }
+    .button{
+        background-color: blue;
+        color: white;
+        padding: 3.5vw 20vw;
+        font-size: 4.5vw;
+        border-radius: 5px;
+        margin-top: 3vh;
+        font-weight: bold;
+        outline: none;
+        cursor:pointer;
+        border:none;
+        transition: box-shadow .6s;
+    }
+    .oauthHeading{
+        color: black;
+        margin-top: 3vw;
+        font-size: 3.5vw;
+        font-weight: 400;
+    }
+    .sameLine{
+    display: inline-flex;
+    justify-content: space-evenly   ;
+    width: 100%;
+    margin-top: 1vw;
+    }
+    .oauthCircle{
+        border: 3px solid rgba(128, 128, 128, 0.3);
+        border-radius:50%;
+        padding:16px;
+        transition: box-shadow .6s;
+    }
+    .loginHeading{
+        font-size: 3.5vw;
+        font-weight: bolder;
+        color: black;
+        font-family: 'avenir';
+    }
+    .loginSubHeading{
+        font-size: 3vw;
+        color: gray;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .verifyAccount{
+        font-family: 'avenir';
+        color: black;
+        font-size: 3.5vw;
+        text-decoration: underline;
+    }
+    .button:hover{
+        
+    }
+}

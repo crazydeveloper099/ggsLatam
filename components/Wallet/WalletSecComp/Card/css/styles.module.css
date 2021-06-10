@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+.main{
+  background-color:#121f1f;
+    padding:5vh 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3vh;
+    width: 90vw;
+    border-radius: 0.2vw;
+}
+.heading{
+  color: #d8d8d8;
+    font-size: 1.5vw;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'avenir';   
+}
+.logo{
+  height: 10vh;
+  width: 10vh;
+}
+.gameName{
+  font-family: 'avenir';
+  font-size: 1.2vw;
+  color: white;
+}
+.textBoxRanking{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.textBoxRankingFstTxt{
+  font-family: 'avenir';
+  font-size: 1.2vw;
+  color: white;
+}
+.textBoxRankingSecTxt{
+  font-size: 1vw;
+  color: white;
+}

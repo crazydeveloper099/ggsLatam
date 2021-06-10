@@ -1,0 +1,128 @@
+.Container{
+    padding: 2.5vw;
+    display: flex;
+    background: #8A2BE2;
+    justify-content: space-around;
+}
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  .titleText{
+    text-align: center;
+    color: #d8d8d8;
+    font-size: 1.7vw;
+    padding: 0;
+    margin: 0;
+    line-height: 3vw;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'avenir';
+    text-align: left;
+    
+}
+.footerAnchor{
+    color:white;
+    text-align:start;
+     font-size:1vw;
+}
+.footerAnchor:hover{
+  color:#d8d8d8;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0.25;
+    margin: 0 0 0 2.5vw;
+}
+.widthFooterSec{
+    flex: 0.5;
+    margin: 0 0 0 2.5vw;
+}
+.footerPara{
+    color:white;
+    text-align:start; 
+    font-size:1vw;
+    max-width: 70%;
+}
+.sameLineFooterSM{
+    display: flex;
+    color: white;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 3vh;
+}
+@media (max-width: 600px) {
+  .Container{
+    padding: 10vw 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #8A2BE2;
+    justify-content: center;
+  }
+
+  .titleText{
+    text-align: center;
+    color: #d8d8d8;
+    font-size:5vw;
+    padding: 0;
+    margin: 2vh 0;
+    line-height: 3vw;
+    position: relative;
+    box-sizing: unset;
+    font-family: 'avenir';
+    text-align: center;
+    
+}
+.footerAnchor{
+    color:white;
+    text-align:center;
+     font-size:4vw;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0.25;
+    margin: 0 0 0 2.5vw;
+}
+.widthFooterSec{
+    flex: 0.5;
+    margin: 0 0 0 2.5vw;
+    justify-content: center;
+    align-items: center;
+}
+.footerPara{
+    color:white;
+    text-align:center; 
+    font-size:3.5vw;
+    max-width: 100%;
+    
+}
+.sameLineFooterSM{
+    display: flex;
+    color: white;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 3vh;
+}
+
+
+}

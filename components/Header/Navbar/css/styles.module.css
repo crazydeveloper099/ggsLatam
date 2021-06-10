@@ -1,0 +1,54 @@
+.navBar{
+     transition: 1s ease;
+}
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+  
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+.logo1{
+    height: 10vh;
+}
+.logo2{
+    height: 8vh;
+    width: 8vw;
+    margin-left: 0.5vw;
+}
+.navLink{
+    color: 'white';
+    font-family: 'avenir-light';
+    margin: 0 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.a1{
+    color:white;
+    background-color: transparent;
+    font-family:'avenir'
+}
+.a1:hover{
+    background-color: rgba(0, 0, 0,0.2);
+}
+@media (max-width: 600px) {
+  .logo1{
+    height: 7vh;
+}
+.logo2{
+    height: 6vh;
+    width: 20vw;
+    margin-left: 0.5vw;
+}
+}

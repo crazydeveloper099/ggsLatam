@@ -1,0 +1,82 @@
+.logo{
+    border-radius: 0.5vw;
+    height: 15vh;
+    width: 12vw;
+    margin-right: 3vw;
+    box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+}
+.logoContainer
+{   padding: 0 3vw;
+    display:flex; 
+align-items:center}
+
+.contentFstContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+.heading{
+    font-size: 1vw;
+    font-family: 'avenir';
+    display: flex;
+    margin-top: 3vh;
+    line-height: 2vw;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'avenir';
+}
+.value{
+    font-size: 2.5vw;
+    font-family: 'avenir';
+    text-align: center;
+    color: white;
+    font-family: 'avenir';
+}
+.keyValContainer{
+    margin: 0 2vw;
+}
+.contentSecContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contentCodeContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.code{
+    font-size: 2vw;
+    font-family: 'avenir';
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.loadingContainer{
+    padding: 10vw;
+    color: white;
+}

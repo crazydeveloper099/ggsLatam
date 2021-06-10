@@ -1,0 +1,188 @@
+.logo{
+    border-radius: 0.5vw;
+    height: 20vh;
+    box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+}
+.logoContainer
+{   
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items:center}
+
+.contentFstContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #d8d8d8;
+}
+.heading{
+    margin-bottom: 2vh;
+    color: #d8d8d8;
+}
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+.heading{
+    font-size: 1vw;
+    font-family: 'avenir';
+   color: white;
+}
+.value{
+    font-size: 1vw;
+    font-family: 'avenir-light';
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: white;
+}
+.keyValContainer{
+    margin: 0 2vw;
+}
+.contentSecContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+
+}
+.contentCodeContainer{
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+.code{
+    font-size: 2.5vw;
+    font-family: 'avenir';
+    background: -webkit-linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.MuiFormLabel-root.Mui-focused {
+    color: white !important;
+  }
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: white !important;
+  }
+  .loadingContainer{
+      padding: 10vw;
+      color: white;
+  }
+  .warning{
+      padding: 1.5vw;
+      border-radius: 4px;
+      color: white;
+      font-size: 2vh;
+      font-family: "avenir";
+      text-align: center;
+      margin-bottom: 2vh;
+      background-color: rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 600px) {
+    .logo{
+        border-radius: 0.5vw;
+        height: 20vh;
+        box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 70px -27px rgba(0,0,0,0.75);
+    }
+    .logoContainer
+    {   
+        display:flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items:center}
+    
+    .contentFstContainer{
+        padding: 1vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #d8d8d8;
+    }
+    .heading{
+        margin-bottom: 2vh;
+        color: #d8d8d8;
+    }
+  
+    .heading{
+        font-size: 4vw;
+        font-family: 'avenir';
+       color: white;
+    }
+    .value{
+        font-size: 3.5vw;
+        font-family: 'avenir-light';
+        white-space: pre-wrap;
+        word-break: break-word;
+        color: white;
+    }
+    .keyValContainer{
+        margin: 0 2vw;
+    }
+    .contentSecContainer{
+        padding: 1vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+    
+    }
+    .contentCodeContainer{
+        padding: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    
+    }
+    .code{
+        font-size: 2.5vw;
+        font-family: 'avenir';
+        background: -webkit-linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+    .MuiFormLabel-root.Mui-focused {
+        color: white !important;
+      }
+      .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: white !important;
+      }
+      .loadingContainer{
+          padding: 10vw;
+          color: white;
+      }
+      .warning{
+          padding: 1.5vw;
+          border-radius: 4px;
+          color: white;
+          font-size: 2vh;
+          font-family: "avenir";
+          text-align: center;
+          margin-bottom: 2vh;
+          background-color: rgba(0, 0, 0, 0.1);
+      }
+
+  }

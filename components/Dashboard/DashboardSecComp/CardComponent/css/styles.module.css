@@ -1,0 +1,154 @@
+@font-face {
+    font-family: "avenir";
+  
+    src: url("/fonts/avenir.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "avenir-light";
+    src: url("/fonts/avenir-light.woff") format("woff"), /* Modern Browsers */
+      url("/fonts/avenir-light.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+.cardContainer{
+    cursor: pointer;
+    background-color:#121f1f;
+    border-radius: 10px;
+    width: 20vw;
+    margin-right: 2vw;
+    box-shadow: 0px 0px 118px -40px rgba(125,23,234,0.77);
+    -webkit-box-shadow: 0px 0px 118px -40px rgba(125,23,234,0.77);
+    -moz-box-shadow: 0px 0px 118px -40px rgba(125,23,234,0.77);
+     
+transition: box-shadow 0.8s;
+}
+.img{
+    width: 20vw;
+    height:25vh;
+    /* object-fit: none; 
+    object-position: center;  */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.cardInnerContainer{
+    padding: 1vw;
+}
+.logoContainer{
+    display: flex;
+}
+.logo{
+    border-radius: 50%;
+    height: 3vw;
+    width: 3vw;
+    margin-right: 1vw;
+}
+.title{
+    font-size:0.9vw;
+    color: white;
+    line-height: 1vw;
+    font-family: 'avenir';
+    
+}
+.type{
+    font-size:0.8vw;
+    color: #d8d8d8;
+    font-family: 'avenir-light';
+}
+.sameLineSpots{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: -0.5vh;
+    margin-top: 2vh;
+    font-family: 'avenir-light';
+}
+.slotText{
+    font-size:0.8vw;
+    color: #d8d8d8;
+}
+.sameLineDate{
+    display: flex;
+    width: 100%;
+    font-size:0.8vw;
+    justify-content: space-between;
+    font-family: 'avenir-light';
+    margin-bottom: 1vh;
+}
+.titleTypeContainer{
+    padding: 0;
+}
+.cardContainer:hover{
+    -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    .cardContainer{
+        cursor: pointer;
+        background-color:#121f1f;
+        border-radius: 10px;
+        width: 80%;
+        height: 45vh;
+        margin: 5vh auto;        
+    }
+    .img{
+        width: 100%;
+        height:25vh;
+        /* object-fit: none; 
+        object-position: center;  */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .cardInnerContainer{
+        padding: 4vw;
+    }
+    .logoContainer{
+        display: flex;
+    }
+    .logo{
+        border-radius: 50%;
+        height: 10vw;
+        width: 10vw;
+    }
+    .title{
+        font-size:4vw;
+        max-width: 150%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: white;
+        line-height: 4.5vw;
+        font-family: 'avenir';
+    }
+    .type{
+        font-size:2.5vw;
+        color: #d8d8d8;
+        font-family: 'avenir-light';
+    }
+    .sameLineSpots{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: -0.5vh;
+        margin-top: 2vh;
+        font-family: 'avenir-light';
+    }
+    .slotText{
+        font-size:3vw;
+        color: #d8d8d8;
+    }
+    .sameLineDate{
+        display: flex;
+        width: 100%;
+        font-size:2.8vw;
+        justify-content: space-between;
+        font-family: 'avenir-light';
+    }
+    .titleTypeContainer{
+        padding: 1vw;
+    }
+}

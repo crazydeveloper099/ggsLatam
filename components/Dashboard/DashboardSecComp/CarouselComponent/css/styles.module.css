@@ -1,0 +1,44 @@
+.h1{
+  text-align: right;
+  color: white;
+  font-size: 2vw;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  line-height: 4vw;
+  margin-top: 2vw;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'avenir';
+}
+.main{
+  display:flex;
+  justify-content:space-between;
+}
+.heading{
+  text-align: right;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  line-height: 4vw;
+  margin-top: 2vw;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'avenir';
+}
+.heading:after{
+  display: inline-block;
+  height: 0.5em;
+  vertical-align: bottom;
+  width: 100%;
+  margin-right: -100%;
+  margin-left: 10px;
+  border-top: 1px solid black;
+}
+@media (max-width: 600px) {
+  .main{
+    display:none;
+  }
+}
