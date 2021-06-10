@@ -111,6 +111,7 @@ export default function MinecraftDialogFstComp(props){
       }
       else{
         setIsLoggedIn(false)
+        setIsLoading(false)
       }
 
         const { current: descriptionElement } = descriptionElementRef;
