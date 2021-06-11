@@ -7,9 +7,11 @@ import {TOURNAMENTS} from '../../../../Constants/Constants.js'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Link from 'next/link'
 import Router from 'next/router';
+
 export default function CardSection(props){
     const[cardCount, setCardCount]=useState(1);
-    
+
+   
 
 const getElements=()=>{
     let elements = [];
@@ -85,7 +87,9 @@ return separateElements;
                     .map((itemArr,index)=>{return(<div key={index}>{itemArr}</div>)})
                 }
             
+            {props.challengeData.length>4 || props.isDashboard?
             <div className={styles.heading}>
+
                 <Button variant="contained" color="primary" size='large' 
                 onClick={props.isDashboard?
                 ()=>Router.push('/events')
@@ -94,6 +98,8 @@ return separateElements;
                 {props.isDashboard?'Eventos':'Mostrar más'}
                 </Button>
             </div>
+            :null
+            }
             </>:
                 <div className={styles.loadingContainer}>
                     <CircularProgress color="inherit" />

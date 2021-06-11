@@ -45,7 +45,7 @@ export default function EventsSecComp(props){
                 return(
                     <TodayChallenges 
                     key={index}
-                    img={item.src} 
+                    img={"carouselImg" in item?item.carouselImg:item.src} 
                     title={item.challengeName} 
                     type={item.challengeType}
                     eventType={item.eventType}

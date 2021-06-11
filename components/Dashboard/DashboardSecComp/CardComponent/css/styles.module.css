@@ -26,6 +26,14 @@
      
 transition: box-shadow 0.8s;
 }
+.labelTimer{
+    color: white;
+    font-family: 'avenir-light';
+}
+.valueTimer{
+    color: rgb(172, 57, 15);
+    font-family: 'avenir';
+}
 .img{
     width: 20vw;
     height:25vh;
@@ -55,7 +63,7 @@ transition: box-shadow 0.8s;
 }
 .type{
     font-size:0.8vw;
-    color: #d8d8d8;
+    color: white;
     font-family: 'avenir-light';
 }
 .sameLineSpots{
@@ -68,7 +76,7 @@ transition: box-shadow 0.8s;
 }
 .slotText{
     font-size:0.8vw;
-    color: #d8d8d8;
+    color: white;
 }
 .sameLineDate{
     display: flex;
@@ -126,7 +134,7 @@ transition: box-shadow 0.8s;
     }
     .type{
         font-size:2.5vw;
-        color: #d8d8d8;
+        color: white;
         font-family: 'avenir-light';
     }
     .sameLineSpots{
@@ -139,7 +147,7 @@ transition: box-shadow 0.8s;
     }
     .slotText{
         font-size:3vw;
-        color: #d8d8d8;
+        color: white;
     }
     .sameLineDate{
         display: flex;

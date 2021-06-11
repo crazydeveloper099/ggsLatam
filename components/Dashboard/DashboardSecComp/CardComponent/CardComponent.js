@@ -3,13 +3,32 @@ import {useState, useEffect} from 'react';
 import { Progress } from 'antd';
 import React from 'react';
 import DialogComp from '../../../Dialog/DialogComp.js'
+import Countdown from 'react-countdown';
+import { LIVE_EVENT, STATIC_CHALLENGE } from '../../../../Constants/Constants';
 
 
 export default function CardComponent(props) {
 
     const [progress, setProgress] = useState(0);
     const [open, setOpen] = useState(false);
+    const [isCompleted, setIsCompleted]=useState(false)
 
+    const Completionist = () => <span style={{visibility:'hidden'}}>Completed!</span>;
+
+
+    const renderer = ({ hours, minutes, seconds, completed }) => {
+        if (completed) {
+            setIsCompleted(true)
+          return <Completionist />;  
+        }else if(hours>0){
+            return <span> {hours}&nbsp;hr&nbsp;&nbsp;{minutes}&nbsp;min</span>
+        }else if(minutes>0 && hours==0){
+            return <span>{minutes}&nbsp;min&nbsp;&nbsp;{seconds}&nbsp;seg</span>
+        } else {
+          return <span> {seconds}&nbsp;seg</span>
+        }
+      };
+    
 
     useEffect(() => {
         let pctg=parseInt(props.spots.split('/')[0])/parseInt(props.spots.split('/')[1])*100
@@ -68,7 +87,17 @@ export default function CardComponent(props) {
                     <div className={styles.slotText}>Fecha</div>
                     <div className={styles.slotText} 
                     style={{color:'#3a7bd5',fontFamily:'avenir'}}>
-                    {props.remainingTime+' GMT-5'}
+                    {props.remainingTime.split(' ')[0]}
+                    </div>
+                </div>
+
+                <div className={styles.sameLineDate} >
+                {!isCompleted?<div  className={styles.slotText}>Comienza en</div>:null}
+                    <div className={styles.slotText} style={{color:'orange',fontFamily:'avenir-light'}}>
+                     <Countdown
+                            date={new Date(props.remainingTime).getTime()}
+                            renderer={renderer}
+                        />
                     </div>
                 </div>
                 

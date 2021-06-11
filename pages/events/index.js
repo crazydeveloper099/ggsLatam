@@ -1,9 +1,9 @@
 import EventsFirstSec from '../../components/Events/EventsFirstSec/EventsFirstSec';
 import EventsSecComp from '../../components/Events/EventsSecComp/EventsSecComp';
 import EventsThirdSec from '../../components/Events/EventsThirdSec/EventsThirdSec.js';
-import EventsFourthSec from '../../components/Events/EventsFourthSec/EventsFourthSec.js'
-import Header from '../../components/Header/Header.js'
-import Footer from '../../components/Footer/Footer.js'
+import EventsFourthSec from '../../components/Events/EventsFourthSec/EventsFourthSec.js';
+import Header from '../../components/Header/Header.js';
+import Footer from '../../components/Footer/Footer.js';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {MINECRAFT,LIVE_EVENT,STATIC_CHALLENGE,TOURNAMENTS,
@@ -29,7 +29,6 @@ export default function Events() {
             axios.post(`${URL}/getChallenges`,{eventType:SPECIAL_EVENT}),
             axios.get(`${URL}/getfeaturedEventsPosters`)
           ]);
-
           setChallengeData([firstResponse.data.data.Items,
                             secondResponse.data.data.Items, 
                             thirdResponse.data.data.Items,
