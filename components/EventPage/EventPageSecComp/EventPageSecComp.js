@@ -22,7 +22,7 @@ export default function EventPageSecComp(props){
 
    
     const leaderBoardRedirect=()=>{
-        Router.push('/leaderboard#'+props.eventType)
+        Router.push('/leaderboard#'+props.eventType+'#'+props.challengeData.challengeId.S)
     }
 
     const calculateTimeLeft = (future) => {
@@ -138,10 +138,10 @@ props.challengeData.end_time.S
 
 
     const loginRedirect=()=>{
-        localStorage.setItem('redirectPage','/events/'+props.eventType+'?'+props.challengeData.challengeId.S);
+        localStorage.setItem('redirectPage','/events/'+props.eventType+'/'+props.challengeData.challengeId.S);
         Router.push('/login')
     }
-
+console.log(props.eventType);
 
     return(
         <div>
@@ -274,7 +274,7 @@ props.challengeData.end_time.S
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
             <div>
             {props.eventType!=SPECIAL_EVENT?
                 <div className={styles.spots}>
@@ -330,8 +330,7 @@ props.challengeData.end_time.S
                     </Button>
                     :
                     <Button 
-                     style={{marginTop:'1vh',outline:'none'}}
-
+                        style={{marginTop:'1vh',outline:'none'}}
                         variant="contained" 
                         color="primary" 
                         size='large'
@@ -339,7 +338,7 @@ props.challengeData.end_time.S
                             props.eventType==MINECRAFT||
                             props.eventType==STATIC_CHALLENGE 
                             || props.eventType==TOURNAMENTS ?
-                            props.timerStatus>1 && props.timerStatus<5?
+                            props.timerStatus<5?
                             false:true
                             :
                             props.timerStatus>=4
@@ -347,8 +346,8 @@ props.challengeData.end_time.S
                         onClick={()=>{setOpen(true)}}
                         className='buttonStyleSuccess'
                         >
-                         ÚNETE AL EVENTO
-                    </Button>:
+                 {props.timerStatus<2?"Pre-participa":"ÚNETE AL EVENTO"}                    
+                 </Button>:
                    
                     <Button 
                         style={{marginTop:'1vh',outline:'none'}}

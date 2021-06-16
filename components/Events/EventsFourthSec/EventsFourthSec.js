@@ -14,36 +14,37 @@ const[isEmpty, setIsEmpty]=useState(false)
 
 useEffect(()=>{
     if(props.isDoneFetchning && props.challengeData!=null){
-        if(props.challengeData[3].length==0){
+        if((props.isAllEvents?props.challengeData[3]:props.challengeData[1]).length==0){
             setIsEmpty(true)
         }
     }
+    
 },[props.isDoneFetchning])
 
 
 return(
     <div className={
-    props.isDoneFetchning? props.challengeData[3].length>0?styles.main:null:styles.main}>
-    {props.isDoneFetchning && props.challengeData[3]!=null ?
-    props.challengeData[3].length>0?
+    props.isDoneFetchning? (props.isAllEvents?props.challengeData[3]:props.challengeData[1]).length>0?styles.main:null:styles.main}>
+    {props.isDoneFetchning && (props.isAllEvents?props.challengeData[3]:props.challengeData[1])!=null ?
+    (props.isAllEvents?props.challengeData[3]:props.challengeData[1]).length>0?
         isEmpty==false?
         <>
             <img className={styles.img} 
-            src={props.challengeData[3][0].src}
+            src={(props.isAllEvents?props.challengeData[3]:props.challengeData[1])[0].src}
             alt=""/>
         <div className={styles.imgOverlay} />
         <div className={styles.textLayer}>
             <div className={styles.heading}>
-                <span style={{color:'#FF00FF'}}>{props.challengeData[3][0].challengeName}</span>
+                <span style={{color:'#FF00FF'}}>{(props.isAllEvents?props.challengeData[3]:props.challengeData[1])[0].challengeName}</span>
                 <br/>
                 <span className={styles.descText}>
-                <div dangerouslySetInnerHTML={{ __html: props.challengeData[3][0].challengeDescription }}
+                <div dangerouslySetInnerHTML={{ __html: (props.isAllEvents?props.challengeData[3]:props.challengeData[1])[0].challengeDescription }}
                 /></span>
                 <div className={styles.PrizeContainer}>
                 <MDBIcon icon="trophy" />&nbsp;&nbsp;
-                {props.challengeData[3][0].challengePrize.length>1?
+                {(props.isAllEvents?props.challengeData[3]:props.challengeData[1])[0].challengePrize.length>1?
                 'Multiples premios':
-                '$'+props.challengeData[3][0].challengePrize[0]}
+                '$'+(props.isAllEvents?props.challengeData[3]:props.challengeData[1])[0].challengePrize[0]}
                 </div>
             </div>
            

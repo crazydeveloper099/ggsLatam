@@ -15,7 +15,6 @@ import { DEV_URL, IS_DEV, PROD_URL } from '../../../Constants/Constants';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
 import LoadingButton from '@material-ui/lab/LoadingButton';
-
 import DialogContent from '@material-ui/core/DialogContent';
 
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -168,10 +167,12 @@ export default function LoginRightContent(props){
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
                     
+                    
                     if (typeof window !== "undefined") {
                         if (window.fbq != null) { 
                           window.fbq('track', 'LOGIN', {authType: "Facebook", mail:response.email });
                         }
+                        amplitude.getInstance().logEvent('FACEBOOK_LOGIN',{mail:response.email})
                     }
 
                     localStorage.setItem('authType', 'Facebook');
@@ -219,11 +220,7 @@ export default function LoginRightContent(props){
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
 
-                    if (typeof window !== "undefined") {
-                        if (window.fbq != null) { 
-                          window.fbq('track', 'LOGIN', {authType: "Google", mail:response.profileObj.email });
-                        }
-                    }
+                   
 
 
                     localStorage.setItem('authType', 'Google');
@@ -236,6 +233,12 @@ export default function LoginRightContent(props){
                     else{
                         Router.push('/events')
                         props.setLoadingValue(false)
+                    }
+                    if (typeof window !== "undefined") {
+                        if (window.fbq != null) { 
+                          window.fbq('track', 'LOGIN', {authType: "Google", mail:response.profileObj.email });
+                        }
+                        amplitude.getInstance().logEvent('GOOGLE_LOGIN',{mail:response.profileObj.email})
                     }
                 }
                 else{
@@ -277,11 +280,11 @@ export default function LoginRightContent(props){
             axios.post(`${URL}/getLoginDetails/`, { dataObj })
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
-                  
                     if (typeof window !== "undefined") {
                         if (window.fbq != null) { 
                           window.fbq('track', 'LOGIN', {authType: "Self", mail:email });
                         }
+                        amplitude.getInstance().logEvent('LOGIN',{mail:email})
                     }
 
                     localStorage.setItem('authType', 'Self');

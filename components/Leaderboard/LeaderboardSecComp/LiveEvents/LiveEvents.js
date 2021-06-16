@@ -5,15 +5,25 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import Card from '../Card/Card.js'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+import { withRouter, useRouter } from 'next/router'
+
 
 export default function LiveEvents(props){
+
+    const { asPath } = useRouter()    
+
+  
+    const[inputIndex, setInputIndex]=useState(0)
+
     const[sort, toggleSort]=useState(false)
-    const changeChallenge=(item)=>{
+    const changeChallenge=(item, index)=>{
+        setInputIndex(index)
         props.setClickedChgId(item.challengeId);
         props.setResultLen(JSON.parse(item.resultData).length)
         props.searchResult(item.challengeId);
 }
+
 
     return(
         <div>
@@ -29,12 +39,15 @@ export default function LiveEvents(props){
                 <div className={styles.gamesConatiner}>
                     {props.challengeData.map((item,index)=>{
                         return(
-                            <div className={styles.card } id={item.challengeId} key={index} >
-                            <input  className={styles.inputInvisible} 
-                            type="radio" 
-                            name="gender" 
-                            value="male" 
-                            onClick={()=>{changeChallenge(item)}}    
+                            <div className={styles.card } id={item.challengeId} key={index}
+                            onClick={()=>{changeChallenge(item, index)}}>
+                            <input
+                            type="radio"  className={styles.inputInvisible} 
+                            onKeyDown={(e)=>e.preventDefault()} 
+                            
+                            checked={asPath.split('#').length>2?
+                            asPath.split('#')[2]==item.challengeId:
+                            index==inputIndex}
                             />
                             <img className={styles.imgNoBorder}
                                 

@@ -51,7 +51,7 @@ export default function Home() {
 
 
    return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ backgroundColor:'#1b0020'}}>
       <Header />
 
       <main className={styles.main}>

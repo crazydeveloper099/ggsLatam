@@ -34,6 +34,7 @@ transition: box-shadow 0.8s;
     color: rgb(172, 57, 15);
     font-family: 'avenir';
 }
+
 .img{
     width: 20vw;
     height:25vh;
@@ -59,7 +60,9 @@ transition: box-shadow 0.8s;
     color: white;
     line-height: 1vw;
     font-family: 'avenir';
-    
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .type{
     font-size:0.8vw;
@@ -159,4 +162,5 @@ transition: box-shadow 0.8s;
     .titleTypeContainer{
         padding: 1vw;
     }
+
 }

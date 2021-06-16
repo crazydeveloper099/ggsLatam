@@ -27,7 +27,7 @@ return(
                              <span style={{color:'white'}}>{props.reward}</span>&nbsp;
                          </div>
                              <div className={styles.Link}>
-                             <Link href={'/events/'+props.eventType+'?'+props.challengeId}>
+                             <Link href={'/events/'+props.eventType+'/'+props.challengeId}>
                             <Button variant="contained" color="primary" size='large' 
                                 className={styles.buttonBlue}>
                             QUIERO PARTICIPAR

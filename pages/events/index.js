@@ -60,6 +60,7 @@ export default function Events() {
         <div style={{ backgroundColor:'#1b0020'}}>
             <Header />
             <EventsFirstSec 
+                isAllEvents={true}
                 isDoneFetchning={isDoneFetchning}
                 challengeData={challengeData} />
             <EventsSecComp
@@ -70,6 +71,7 @@ export default function Events() {
                 isDoneFetchning={isDoneFetchning}
                 challengeData={challengeData} />
             <EventsFourthSec
+                isAllEvents={true}
                 isDoneFetchning={isDoneFetchning}
                 challengeData={challengeData} />
             <Footer />

@@ -19,7 +19,7 @@ const getElements=()=>{
         let item=props.challengeData[i];
         elements.push(
             {...props.eventType!=TOURNAMENTS?
-            <Link key={i}  href={'/events/'+props.eventType+'?'+item.challengeId}>
+            <Link key={i}  href={'/events/'+props.eventType+'/'+item.challengeId}>
                 <a>
                 <Card            
                 title={item.challengeName} 

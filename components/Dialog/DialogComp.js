@@ -20,7 +20,6 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import FormData from 'form-data';
 import Tooltip from '@material-ui/core/Tooltip';
 import moment from 'moment-timezone';
-import ReactGA from 'react-ga';
 
 moment().format();
 
@@ -89,11 +88,7 @@ export default function DialogComp(props) {
                         if (window.fbq != null) { 
                           window.fbq('track', 'PARTICIPATION', {url: window.location.href });
                         }
-                        ReactGA.event({
-                            category: 'User',
-                            action: 'Participated',
-                            label: 'URL-'+window.location.href
-                          });
+                        amplitude.getInstance().logEvent('PARTICIPATION',{'CHALLENGE_ID':challengeID,'EVENT_TYPE':eventType,'PARTICIPANT_EMAIL':email})
                     }
                 }
             }

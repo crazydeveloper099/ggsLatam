@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react';
-import EventSecPage from '../../components/EventPage/EventPageSecComp/EventPageSecComp.js';
-import EventThdComp from '../../components/EventPage/EventThdComp/EventThdComp.js';
-import EventFstComp from '../../components/EventPage/EventPageFstComp/EventPageFstComp.js';
+import EventSecPage from '../EventPage/EventPageSecComp/EventPageSecComp.js';
+import EventThdComp from '../EventPage/EventThdComp/EventThdComp.js';
+import EventFstComp from '../EventPage/EventPageFstComp/EventPageFstComp.js';
 import socketIOClient from "socket.io-client";
 import {IS_DEV, DEV_URL, PROD_URL, MINECRAFT, STATIC_CHALLENGE} from '../../Constants/Constants.js';
 import axios from 'axios';
-import Header from '../../components/Header/Header.js'
-import Footer from '../../components/Footer/Footer.js'
+import Header from '../Header/Header.js'
+import Footer from '../Footer/Footer.js'
 const EventPage = () => {
     
   const[challengeData, setChallengeData]=useState(null)
@@ -21,9 +21,9 @@ const EventPage = () => {
   const URL=IS_DEV?DEV_URL:PROD_URL;
   const checkParticipation=()=>{
     
-    const query=(window.location.href.split('/').pop())
-    const id=query.split('?')[1]
-    const eventType1=query.split('?')[0]
+    const query=(window.location.href.split('/'))
+    const id=query[query.length-1]
+    const eventType1=query[query.length-2]
     let email=localStorage.getItem('email')
       if(email){
         
@@ -72,9 +72,9 @@ const EventPage = () => {
   }
 
   const fetchChallenges=()=>{
-  const query=(window.location.href.split('/').pop())
-    const id=query.split('?')[1]
-    const eventType1=query.split('?')[0]
+  const query=(window.location.href.split('/'))
+    const id=query[query.length-1]
+    const eventType1=query[query.length-2]
       axios.post(`${URL}/getSpecificChallenge`,{id, eventType:eventType1})
       .then(res=>{
            if(res.data.status=='success'){
@@ -95,8 +95,8 @@ const EventPage = () => {
       }      
     } , [challengeData]);  
   useEffect(() =>{ 
-    const query=(window.location.href.split('/').pop())
-    setEventType(query.split('?')[0])
+    const query=(window.location.href.split('/'))
+    setEventType(query[query.length-2])
     fetchChallenges();
 
       const socket = socketIOClient(URL);

@@ -1,23 +1,14 @@
 import styles from './css/styles.module.css';
-import Particles from '../../particles/ParticlesBackground.js'
 import React from "react";
 import Button from '@material-ui/core/Button';
 import Link from 'next/link';
 import Carousel from 'react-bootstrap/Carousel'
-import axios from 'axios';
-import {IS_DEV, DEV_URL, PROD_URL} from '../../../Constants/Constants.js';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {useState,useEffect} from 'react';
-import socketIOClient from "socket.io-client";
 import {  MDBIcon } from "mdbreact";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 export default function EventsFirstSec(props) {
-
-
-
-
 
 return (
       <Carousel fade 
@@ -26,7 +17,7 @@ return (
       >
       {
         props.isDoneFetchning?
-        props.challengeData[5].map(item=>{
+        (props.isAllEvents?props.challengeData[5]:props.challengeData[2]).map(item=>{
           return(
           <Carousel.Item key={item.id}>
           <div className={styles.bendingImgBackTint}>
@@ -58,6 +49,5 @@ return (
       </div>    
       }
     </Carousel>
-  )
-  
+  ) 
 }

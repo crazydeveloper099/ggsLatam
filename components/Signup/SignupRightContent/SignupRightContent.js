@@ -12,11 +12,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Router from 'next/router';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
-import TextField from '@material-ui/core/TextField';
-import LoadingButton from '@material-ui/lab/LoadingButton';
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import {IS_DEV, DEV_URL, PROD_URL, STATIC_CHALLENGE, MINECRAFT, TOURNAMENTS} from '../../../Constants/Constants.js';
 import Snackbar from '@material-ui/core/Snackbar';
 import VerifyUserDialog from '../../Dialog/VerifyUser/VerifyUserDialog';
@@ -72,11 +67,11 @@ export default function LoginRightContent(props){
             axios.post(`${URL}/getLoginDetails/`, { dataObj })
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
-
                     if (typeof window !== "undefined") {
                         if (window.fbq != null) { 
                           window.fbq('track', 'REGISTER', {authType: "Facebook", mail:response.email });
                         }
+                        amplitude.getInstance().logEvent('REGISTER_FACEBOOK',{mail:response.email})
                     }
 
                     localStorage.setItem('authType', 'Facebook');
@@ -106,7 +101,6 @@ export default function LoginRightContent(props){
     const responseGoogle = (response,token) => {
         window.scrollTo(0, 0)
         if('accessToken' in response){
-            
             props.setLoadingTextValue('Connecting To Google..')
             props.setLoadingValue(true)
             let dataObj={
@@ -122,11 +116,11 @@ export default function LoginRightContent(props){
             axios.post(`${URL}/getLoginDetails/`, { dataObj })
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
-                    
                     if (typeof window !== "undefined") {
                         if (window.fbq != null) { 
                           window.fbq('track', 'REGISTER', {authType: "Google", mail:response.profileObj.email });
                         }
+                        amplitude.getInstance().logEvent('REGISTER_GOOGLE',{mail:response.profileObj.email})
                       }
 
 
@@ -191,11 +185,11 @@ export default function LoginRightContent(props){
             axios.post(`${URL}/getSignupDetails/`, { dataObj })
             .then(res => {
                 if(res.data.status=='success' && res.data.saved){
-
                     if (typeof window !== "undefined") {
                         if (window.fbq != null) { 
                           window.fbq('track', 'REGISTER', {authType: "Self", mail:email });
                         }
+                        amplitude.getInstance().logEvent('REGISTER',{mail:email})
                       }
 
                     props.setLoadingValue(false)

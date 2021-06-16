@@ -26,7 +26,7 @@ return(
                         <MDBIcon icon="trophy" style={{color:'white'}} />&nbsp;&nbsp;
                              <span style={{color:'white'}}>{props.reward}</span>
                          </div>
-                             <Link href={'/events/'+props.eventType+'?'+props.challengeId}>
+                             <Link href={'/events/'+props.eventType+'/'+props.challengeId}>
                             <Button variant="contained" color="primary" size='large' 
                             style={{background:'#8A2BE2', 
                                     fontSize:'1vw',

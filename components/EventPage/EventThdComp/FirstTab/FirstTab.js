@@ -12,7 +12,7 @@ export default function EventThdComp(props) {
             {!props.isLoading?   
                 <div className={styles.main}>
                 <div className={styles.heading}>
-                    Premios&nbsp;<span className={styles.prizesSmallText}>(1gg coin = 1dollar)</span>
+                    Premios&nbsp;<span className={styles.prizesSmallText}>(1 GG Coin = 1 USD)</span>
                 </div>
                 <div className={styles.value}>
                 <div className={styles.prizeList}>
@@ -51,7 +51,7 @@ export default function EventThdComp(props) {
             }
             
             <div className={styles.heading}>
-            Descripcion
+            Descripción
             </div>
             <div className={styles.value}
             dangerouslySetInnerHTML={{ __html: props.challengeData.challengeDescription.S }}

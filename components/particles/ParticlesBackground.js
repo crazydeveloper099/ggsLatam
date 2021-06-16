@@ -8,7 +8,7 @@ export default function ParticlesBackground() {
       params={{
         particles: {
             number: {
-              value: 30,
+              value: 10,
               density: {
                 enable: true,
                 value_area: 800
@@ -22,8 +22,7 @@ export default function ParticlesBackground() {
             				shadow: {
             					enable: true,
             					color: "#ce00ce",
-            					blur: 5
-            				}
+              	}
             }
           }
             	}}

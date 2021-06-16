@@ -49,23 +49,29 @@ export default function MinecraftDialogFstComp(props){
     }
       
     const whitelistUser=()=>{
-      setUpdatingUsername(true);
-      setServerDown(false)
-      if(!inputError){
-        const URL=IS_DEV?DEV_URL:PROD_URL;
-        axios.post(`${URL}/mcWhitelistUser`,{email,username:inputVal })
-        .then(res=>{
-          console.log(res);
-          if(res.status==200){
-            setUpdatingUsername(false);  
-            if(res.data.status=='OK'){
-              setIsMCUsernameSet(true);  
+      if(inputVal.length>2){
+        setUpdatingUsername(true);
+        setServerDown(false)
+        serInputError(false)
+        if(!inputError){
+          const URL=IS_DEV?DEV_URL:PROD_URL;
+          axios.post(`${URL}/mcWhitelistUser`,{email,username:inputVal })
+          .then(res=>{
+            console.log(res);
+            if(res.status==200){
+              setUpdatingUsername(false);  
+              if(res.data.status=='OK'){
+                setIsMCUsernameSet(true);  
+              }
+              else{
+                setServerDown(true)
+              }
             }
-            else{
-              setServerDown(true)
-            }
-          }
-        })
+          })
+        }
+      }
+      else{
+        serInputError(true)
       }
     }
 
@@ -200,13 +206,13 @@ export default function MinecraftDialogFstComp(props){
                     id="outlined-error-helper-text"
                     label="TU NICKNAME DE MINECRAFT"
                     helperText={inputError?
-                        'NOMBRE DENTRO DEL JUEGO':null}
+                        'Nickname inválido':null}
                     variant="outlined"
                     disabled={!isLoggedIn || updatingUsername}
                 />
             </div>
             <div className={styles.info_mcWhitelist}>
-            {serverDown?<><span> Lo sentimos, el servidor se encuentra offline. Inténtalo más tarde</span><br /></>:null}
+            {serverDown?<><span style={{color:'orange'}}> Lo sentimos, el servidor se encuentra offline. Inténtalo más tarde</span><br /></>:null}
 
             REVISALO ANTES DE ENVIAR, YA QUE NO PODRÁS MODIFICARLO LUEGO
             </div> 

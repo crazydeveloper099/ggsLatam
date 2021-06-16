@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import Navbarggs from './Navbar/Navbarggs.js';
 import ToastElement from './ToastElement/ToastElement.js';
+import { useEffect } from 'react';
+
 export default function Header(props){
+
+
+  useEffect(()=>{
+    amplitude.getInstance().init(process.env.amplitudeId);
+  },[])
 
   const advancedMatching = {};
   const options = {autoConfig: true, debug: false };
@@ -18,6 +25,7 @@ export default function Header(props){
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script type="text/javascript" src="/js/fbPixel.js"></script>
         <script type="text/javascript" src="/js/googleTagManager.js"></script>
+        <script type="text/javascript" src="/js/amplitude.js"></script>
         </Head>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSKLXVM"
         height="0" width="0" style={{display:'none',visibility:'hidden'}} />  

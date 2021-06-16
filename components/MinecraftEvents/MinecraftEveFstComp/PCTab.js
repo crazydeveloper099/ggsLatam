@@ -17,7 +17,7 @@ export default function PCTab(props){
             style={{color:'white',fontFamily:'avenir'}} >Jugar en PC (Java)</div>
 
 <p style={{color:'white'}}>
-            Para acceder a nuestra network desde PC (Versión Java) deberás dirigirte al aparado "Jugar", y agregar un servidor en "Servidores" utilizando la dirección
+            Para acceder a nuestra network desde PC (Versión Java) deberás dirigirte al apartado "Jugar", y agregar un servidor en "Servidores" utilizando la dirección
             </p>
 
             <div className={styles.heading} 

@@ -28,13 +28,14 @@ export default function LeaderboardSecComp(props) {
     const[challengeData, setChallengeData]=useState(null)
     const[clickedChgId, setClickedChgId]=useState(null)
     const[resultLen, setResultLen]=useState(null)
+
     const[individualResult, setIndividualResult]=useState(null)
     const[individualChg, setIndividualChg]=useState(null)
     const[individualResultReverse, setIndividualResultReverse]=useState(null)
     const[isResultEmpty, setIsResultEmpty]=useState(false)
     const[ResultSc, setResultSc]=useState(null);
 
-    const fetchChallenges=()=>{    
+    const fetchChallenges=()=>{  
         setChallengeData(null)
         setIndividualResult(null)
         setIndividualResultReverse(null)
@@ -50,7 +51,9 @@ export default function LeaderboardSecComp(props) {
                     setChallengeData(res.data.data.Items)
                     setClickedChgId(res.data.data.Items[0].challengeId);
                     setResultLen(JSON.parse(res.data.data.Items[0].resultData).length)
-                    searchResult(res.data.data.Items[0].challengeId)
+                    
+                    searchResult(asPath.split('#').length>2?
+                    asPath.split('#')[2]:res.data.data.Items[0].challengeId)
                 }
                 else{
                     setChallengeData(res.data.data.Items)
@@ -75,7 +78,6 @@ export default function LeaderboardSecComp(props) {
                     setIndividualChg(JSON.parse(res.data.data.Item.unitChallenge.S).Item)
                     setIndividualResult(JSON.parse(res.data.data.Item.resultData.S))
                     setIndividualResultReverse(JSON.parse(res.data.data.Item.resultData.S).reverse())
-                    console.log(res.data.data.Item);
                     setResultSc(res.data.data.Item.url.S);
                 }
               } 
@@ -85,8 +87,11 @@ export default function LeaderboardSecComp(props) {
     }
 
     const resetEvent=(id)=>{
-        const Event=id==0?LIVE_EVENT:id==1?STATIC_CHALLENGE:
-                    id==2?TOURNAMENTS:MINECRAFT;
+        const Event=id==0?LIVE_EVENT:
+                    id==1?STATIC_CHALLENGE:
+                    id==2?TOURNAMENTS:
+                    id==3?MINECRAFT:
+                    SPECIAL_EVENT
         setEventType(Event) 
     }
 

@@ -4,7 +4,6 @@ import { Progress } from 'antd';
 import React from 'react';
 import DialogComp from '../../../Dialog/DialogComp.js'
 import Countdown from 'react-countdown';
-import { LIVE_EVENT, STATIC_CHALLENGE } from '../../../../Constants/Constants';
 
 
 export default function CardComponent(props) {
@@ -58,7 +57,7 @@ export default function CardComponent(props) {
             <div className={styles.cardInnerContainer}>
 
                 <div className={styles.logoContainer}>
-                    <img src='ggsLogoNoBg.png' 
+                    <img src='/ggsLogoNoBg.png' 
                     alt=""
                     className={styles.logo} />
                     <div className={styles.titleTypeContainer}>

@@ -4,19 +4,18 @@ import CarouselComponent from './CarouselComponent/CarouselComponent.js'
 import socketIOClient from "socket.io-client";
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import {TOURNAMENTS,IS_DEV, DEV_URL, PROD_URL} from '../../../Constants/Constants.js'
-import { makeStyles } from '@material-ui/core/styles';
+import {IS_DEV, DEV_URL, PROD_URL, STATIC_CHALLENGE} from '../../../Constants/Constants.js'
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link'
 
 export default function DashboardSecComp() {
 
     const[challengeData, setChallengeData]=useState(null)
-    // const[open, setOpen]=useState(false)
     const URL=IS_DEV?DEV_URL:PROD_URL;
 
     const fetchChallenges=()=>{
-        axios.post(`${URL}/getChallenges`,{eventType:TOURNAMENTS})
+        axios.post(`${URL}/getChallenges`,{eventType:STATIC_CHALLENGE})
         .then(res=>{
             console.log(res);
              if(res.data.status=='success'){
@@ -41,7 +40,7 @@ export default function DashboardSecComp() {
             fetchChallenges();
         })
         fetchChallenges();
-}, []);
+    }, []);
 
 
     return(
@@ -50,9 +49,8 @@ export default function DashboardSecComp() {
            
             {challengeData!=null?
             <>
-                <div className={styles.heading}>
-                 
-            <strong>Torneos </strong> destacados</div>  
+                <div className={styles.heading}>      
+            <strong>Retos </strong> disponibles</div>  
             <div className={styles.cardContainer}>
             {challengeData.slice(0,4).map((item,index)=>{
                 return(
@@ -73,6 +71,13 @@ export default function DashboardSecComp() {
                     />
                 )
             })}
+            </div>
+            <div className={styles.buttonContainer}>
+            <Link href='/events'>  
+            <Button variant="contained" color="primary" size='large' >
+                Eventos
+            </Button>
+            </Link>  
             </div>
             </>
             :
